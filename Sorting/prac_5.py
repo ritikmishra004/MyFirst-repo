@@ -27,9 +27,18 @@ def merge(arr,low,mid,high):
     while right <= high:
         temp.append(arr[right])
         right += 1
+# important and confusing
+    for i in range(low, high + 1):  
+    # 🔹 i loop karega low se high tak (inclusive)
+    # 🔹 Python mein range ka end exclusive hota hai, isiliye high+1 likha gaya hai
+    # 🔹 Ye loop original array ke us portion ko cover karega jahan sorted data wapas daalna hai
 
-    for i in range(low, high + 1):
-        arr[i] = temp[i - low]
+        arr[i] = temp[i - low]  
+        # 🔹 temp ek naya list hai jisme sorted elements hain (temp[0], temp[1], ..., temp[n])
+        # 🔹 i - low ka matlab hai: temp ka index 0 se shuru hota hai, jabki arr mein insert low se
+        # 🔹 Example: agar low = 2 aur i = 2, to temp[0] → arr[2]
+        # 🔹 Har temp element ko uski actual position (original array mein) mein daala jaa raha hai
+
 
 arr = list(map(int,input("Enter numbers : ").split()))
 n = len(arr)
