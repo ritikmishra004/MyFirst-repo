@@ -1,5 +1,5 @@
 # rotate an array by k numbers
-def rotate(arr,n,d):
+def rotate(arr,d):
     # Step 1: Reverse first d elements
     arr[:d] = reversed(arr[:d])                   
 
@@ -10,13 +10,11 @@ def rotate(arr,n,d):
     arr[:] = reversed(arr)
 
     return arr
-
-    return arr
 arr = list(map(int, input("Enter numbers: ").split()))
 n =len(arr)
 d = int(input("Enter any number : "))
 d = d%n
-rotate(arr,n,d)
+rotate(arr,d)
 print("rotated array",arr)
 
 
