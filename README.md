@@ -1,4 +1,4 @@
 # MyFirst-repo
-This is my first Git Repository.
+Hi, I am Ritik Mishra
 <br>
-Hii i am Ritik Mishra
+This is my first Git Repository.
