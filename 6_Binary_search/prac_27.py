@@ -1,5 +1,8 @@
 # Kth Missing Positive Number
 # using binary search
+# humare pass array hai to une last index wale no. ko check karenge aur index+1 jo ke actual number hai usse subtract
+# karenge to usse pta chal jayega ke kitne no missing hain 
+# ishi observation ke help se hum binary search ka use kr skte hain
 
 def findKthPositive(arr, k):
     low = 0
