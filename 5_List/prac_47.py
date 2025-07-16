@@ -5,7 +5,7 @@ def pivo(arr,low,high):
     pivot = arr[low]
     i = low+1
     j = high
-    while i < j:
+    while i <= j:
         while i <= high and arr[i] <= pivot:
             i += 1
         while j >=low and arr[j] > pivot:
