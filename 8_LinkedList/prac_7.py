@@ -24,7 +24,7 @@ def delete_tail(head):
         temp = temp.next
     
     # Now temp is second last node
-    del temp.next  # delete the tail node
+    # del temp.next  # delete the tail node
     temp.next = None  # disconnect from list
     return head
 
