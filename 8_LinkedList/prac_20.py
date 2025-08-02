@@ -1,4 +1,4 @@
-# inset in kth in dLL
+# insert in kth in dLL
 
 class Node:
     def __init__(self, data,next=None,back=None):
