@@ -5,18 +5,20 @@ class Queue:
         self.queue = []
 
     # Enqueue (insert at end)
-    def enqueue(self, value):
+    def push(self, value):
         self.queue.append(value)
 
-    # Dequeue (remove from front)
-    def dequeue(self):
+    # Dequeue (remove from front) – manually without pop()
+    def pop(self):
         if not self.is_empty():
-            return self.queue.pop(0)  # Remove first element
+            value = self.queue[0]             # front element store karo
+            self.queue = self.queue[1:]       # first element hata do
+            return value
         else:
             return "Queue is empty"
 
     # Front element
-    def front(self):
+    def top(self):
         if not self.is_empty():
             return self.queue[0]
         else:
@@ -33,3 +35,19 @@ class Queue:
     # Display queue
     def display(self):
         print("Queue (front to rear):", self.queue)
+
+
+
+s = Queue()
+s.push(5)
+s.push(1)
+s.push(2)
+s.push(3)
+s.display()
+s.pop()
+s.pop()
+s.display()
+print(s.pop())
+print(s.top())
+print(s.is_empty())
+s.display()

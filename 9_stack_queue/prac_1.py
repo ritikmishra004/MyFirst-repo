@@ -3,24 +3,35 @@
 class Stack:
     def __init__(self):
         self.stack = []
-    def push(self,value):
+
+    def push(self, value):
         self.stack.append(value)
+
     def pop(self):
         if not self.is_empty():
-            return self.stack.pop()
+            # Manually remove last element (without using pop)
+            last_index = len(self.stack) - 1
+            value = self.stack[last_index]
+            self.stack = self.stack[:last_index]  # exclude last element
+            return value
         else:
             return "stack is empty"
+
     def top(self):
         if not self.is_empty():
             return self.stack[-1]
         else:
             return "stack is empty"
+
     def is_empty(self):
         return len(self.stack) == 0
+
     def size_of_stack(self):
         return len(self.stack)
+
     def display(self):
-        print("stack (top to bottom)",self.stack[::-1])
+        print("stack (top to bottom):", self.stack[::-1])
+
 
 s = Stack()
 s.push(5)
