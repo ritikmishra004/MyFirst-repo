@@ -23,3 +23,6 @@ def nextGreaterElements(nums):
         stack.append(curr_index)
 
     return result
+
+arr = [2,10,12,1,11]
+print(nextGreaterElements(arr))

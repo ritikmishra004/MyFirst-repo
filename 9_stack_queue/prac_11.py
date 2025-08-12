@@ -2,24 +2,25 @@
 # next greatest integer
 
 def nextGreaterInteger(arr):
-    nge = []  # 🔹 Stack to store potential next greater elements
+    nge = []  # 🔹 Stack: future ke "next greater" candidates store karega
     n = len(arr)
 
-    # 🔁 Traverse from right to left
+    # 🔁 Loop right se left (kyunki hume future ke elements ka idea chahiye)
     for i in range(n-1, -1, -1):
-        current = arr[i]
+        current = arr[i]  # 🔹 Abhi ka element
 
-        # 🔁 Remove all elements <= current from stack
+        # 🔁 Jab tak stack non-empty hai aur top ≤ current, tab tak pop
+        # 👉 Kyunki wo element current ke liye next greater ho hi nahi sakta
         while nge and nge[-1] <= current:
             nge.pop()
 
-        # 🔹 Stack ka top hi next greater hai agar stack non-empty ho
+        # 🔹 Agar stack mein kuch bacha hai to top hi next greater hai
         next_greater = nge[-1] if nge else -1
 
-        # 🔹 Replace current element with next greater
+        # 🔹 Current element ko replace karo uske next greater se
         arr[i] = next_greater
 
-        # 🔹 Push current element to stack (ab future ke liye candidate ban gaya)
+        # 🔹 Current ko stack mein push karo future ke elements ke liye candidate banane
         nge.append(current)
 
     return arr
