@@ -1,3 +1,6 @@
+# BFS level print = [[1],[2,3],[4,5,6,7]]
+
+
 from collections import deque
 
 # Definition for a binary tree node.
