@@ -1,4 +1,4 @@
-# find maximum diameter between two node
+# find maximum diameter/width between two node
 
 class Node:
     def __init__(self, data):
