@@ -51,3 +51,13 @@ for v in values:
 print("1st smallest:", kthSmallest(root, 1))  # 2
 print("3rd smallest:", kthSmallest(root, 3))  # 4
 print("5th smallest:", kthSmallest(root, 5))  # 6
+
+# curr = curr.right ka matlab hai:
+
+# Agar current node ke right child hai → uske leftmost tak jao next iterations me.
+# Agar right child nahi hai → fir stack se upar ke nodes niklenge (ancestor nodes).
+
+# ✅ Summary
+
+# curr = curr.right isliye hai kyunki inorder traversal me root ke baad right subtree aata hai.
+# Agar ye line hata denge, to hum kabhi right subtree visit hi nahi karenge → galat answer milega
