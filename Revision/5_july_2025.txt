@@ -1,0 +1,165 @@
+# # **Recursion:**
+
+
+                                    * functional:
+
+Functional Programming (Functional Approach)
+Functional programming mein hum functions ke through kaam karte hain.
+ Isme state change ya data mutation avoid kiya jata hai.
+📌 Key Features:
+Functions are first-class citizens (can be passed, returned)
+
+Avoid loops → use map(), filter(), reduce(), etc.
+
+Prefer pure functions (same output for same input)
+
+No side-effects (global variable changes avoided)
+* Functional approach to square a list
+nums = [1, 2, 3, 4, 5]
+
+* Functional way using map
+squared = list(map(lambda x: x**2, nums))
+
+print("Squared list:", squared)
+
+
+#                                     parameterized :
+
+Parameterized function ka matlab: function ke andar parameters (ya arguments) diye jate hain jisse uski working flexible ho jaati hai.
+
+📌 Key Point:
+def function_name(param1, param2):
+
+Reusability aur modularity ke liye use hota hai
+
+# multiple Recursion
+
+
+#                                           **# Hashing: **
+
+                                        hashing
+'''Hashing ek technique hai jisme data ko ek fixed size value mein convert kiya jata hai (called hash).
+Iska main purpose hai fast searching and retrieval.'''
+
+
+                                ** .get() **
+dict.get() ka use kyun karte hain?
+✅ get() safe tarike se dictionary se value nikaalne ke liye hota hai.
+Agar key exist karti hai → value mil jaati hai
+Agar key nahi hoti → None ya default value milti hai
+→ Error nahi deta!
+
+syntax :
+dict.get(key, default_value)
+
+** Access
+
+freq.get(number,0)
+
+                                # Counter
+
+ek special dictionary hoti hai jo automatically elements ki frequency count karti hai.
+ye Python ka collections module ka part hai, aur bahut powerful hota hai jab hume frequency count ya element counting karni hoti hai 
+
+::Feature	                           :: Description
+
+Counter()	                        Count frequencies of elements
+.get(key)	                        Safe access to count
+.most_common()	                    Get most frequent elements
+.items()	                        Loop over elements and their counts
+
+for key, val in c.items():
+    print(key, "appears", val, "times")
+
+
+                                # defaultdict
+
+defaultdict ek special dictionary hai jo automatically default value assign kar deta hai agar key exist nahi karti.
+
+🟢 Normal dict me agar missing key access karoge to ❌ error aata hai (KeyError)
+🟢 defaultdict me agar key missing hai, to wo default value de deta hai automatically.
+
+from collections import defaultdict
+
+d = defaultdict(int)  # Default value = 0
+
+d['a'] += 1
+d['b'] += 5
+d['a'] += 2
+
+print(d)  # Output: {'a': 3, 'b': 5}
+Yahan 'a' aur 'b' pe direct += use kiya gaya, bina key check kare —
+defaultdict ne khud hi 0 se start kar diya.
+
+# **                                         sorting
+
+** SELECTION SORT
+
+Selection Sort ek sorting algorithm hai jo har step me chhoti (smallest) value dhundh ke usse sahi jagah par rakh deta hai.
+
+
+<!-- Poore array me se sabse chhoti value dhundo
+Usse first position (index 0) pe rakho
+Ab bacha hua array (baaki elements) lo
+Usme se fir se smallest value dhundo
+Usse next position (index 1) pe rakho
+Aise hi repeat karo jab tak pura array sort na ho jaye -->
+
+** BUBBLE SORT
+
+Bubble Sort ek sorting algorithm hai jo bar-bar adjacent (side-by-side) elements ko compare karke swap karta hai
+Jab tak poora array sort na ho jaye.
+
+Badi value bubble ban ke end me chali jaati hai — isliye naam hai “Bubble Sort” 🫧
+
+<!-- Pehle do elements compare karo:
+Agar pehla bada ho → swap karo
+Fir agle pair pe jao (2nd & 3rd), waisa hi karo
+Poora array ke end tak ye process repeat karo
+1st round ke baad sabse badi value last me chali jaati hai
+Ab same kaam bacha hua array (chhoti size) pe repeat karo -->
+
+** INSERTION SORT
+
+Insertion Sort ek sorting algorithm hai jo array ko step by step build karta hai jaise hum cards ko haath me sort karte hain 🃏
+
+<!-- Pehla element sorted maana jata hai
+Doosre element se start karo
+Use pehle ke sorted part me sahi jagah insert karo
+Aise hi har element ko uske sahi position pe insert karte jao -->
+
+** MERGE SORT
+
+Merge Sort ek Divide and Conquer technique pe based sorting algorithm hai
+Jo array ko baar-baar do parts me divide karta hai, dono parts ko recursively sort karta hai,
+fir merge karta hai sorted result me.
+
+<!-- Array ko middle se divide karo
+Left part ko merge sort se sort karo
+Right part ko merge sort se sort karo
+Dono sorted parts ko merge karo -->
+
+
+** QUICK SORT
+
+Quick Sort bhi ek Divide and Conquer algorithm hai (jaise Merge Sort)
+Lekin isme hum pivot element choose karke array ko partition karte hain:
+
+🔸 Chhoti values pivot ke left me
+🔸 Badi values pivot ke right me
+
+Uske baad left aur right parts ko recursively sort karte hain.
+
+Ek pivot choose karo (koi bhi element, often last)
+
+<!-- Array ko partition karo:
+left → elements < pivot
+right → elements > pivot
+Pivot ab apni sahi position pe hai
+Ab left & right part pe Quick Sort recursively chalao -->
+
+Difference From Merge Sort:
+Feature	Merge Sort	                Quick Sort
+Speed (avg)	Slower                  (O(n log n))	Faster (O(n log n))
+Extra space	O(n)	                 O(1) in-place
+Stability	✅ Stable	            ❌ Not stable
