@@ -1,17 +1,14 @@
-nums = [1,2,3,4,5,6,7]
+nums = [1, 5, 1, 5]
+target = 6
 n = len(nums)
-k = 3
-k = k%n
-temp = []
-for i in range(k):
-    temp.append(nums[n-k+i])
-print(temp)
+ans = []
+hash = {}
+for i in range(n):
+  diff =target-nums[i]
+  if diff in hash:
+    ans.append((diff,nums[i]))
+    del hash[diff]
+  else:
+    hash[nums[i]] = i
 
-for i in range(k,-1,-1):
-    nums[i+k] = nums[i]
-print(nums)
-
-for i in range(0,k):
-    nums[i]=temp[i]
-
-print(nums)
+print (ans)
